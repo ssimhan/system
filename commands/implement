@@ -1,0 +1,42 @@
+# /implement — Execute Next Implementation Plan Task
+
+This command reads from `/claude/implementation-plan.md`, determines the current progress, and automatically begins the next task.
+
+## 🧩 What it Does
+
+* Parses `implementation-plan.md`
+* Locates the first incomplete task
+* Marks it as "in-progress ✅"
+* Begins implementing the task
+* On success, updates the task to "complete ✅"
+
+## 🪜 Example Plan Snippet
+
+```md
+### Phase 1: Project Setup
+- [x] Create repo structure
+- [x] Initialize `package.json`
+- [ ] Scaffold `/docs` and `/claude` folders ✅
+- [ ] Add initial commit hooks
+```
+
+## 🧠 Best Practices
+
+* Use small, atomic steps in the plan to stay within Claude's context window
+* Commit frequently after completing each task
+
+## 📝 Example Prompt
+
+```md
+/implement
+```
+
+Claude will then:
+
+1. Find the next checkbox task that isn't marked done
+2. Start coding
+3. Mark the task ✅ and commit the changes
+
+---
+
+> 💡 Tip: Use `/clear` to reset context once you’ve implemented a few tasks and want to regain clarity
