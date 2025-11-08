@@ -1,0 +1,35 @@
+# /context — Check Context Window Usage
+
+This command checks how much of Claude's context window is currently filled. It helps avoid hitting the "compacting" threshold, which slows down performance and loses prior history.
+
+## 🧩 What it Does
+
+* Reports how many tokens are currently used in context
+* Highlights recent additions or memory overload risks
+* Warns if nearing compacting threshold
+
+## 💡 Why It Matters
+
+Claude has no long-term memory. Once the context fills up, it starts compacting — compressing or forgetting prior parts of the conversation.
+
+Using `/context` regularly helps:
+
+* Identify when you need to commit decisions to Markdown
+* Decide when to clear context with `/clear`
+
+## 📝 Example Prompt
+
+```md
+/context
+```
+
+Claude will respond with something like:
+
+```
+Context tokens used: 78,292 / 200,000
+You are currently safe. Compacting not yet triggered.
+```
+
+---
+
+> ✅ Tip: Use this before large file loads or major implementations to stay in control of Claude’s memory usage.
