@@ -1,3 +1,11 @@
+# Claude Code Starter Repo
+
+This repo scaffolds a Claude Code–based implementation system, adapted from best practices in the Nov 7 Office Hours.
+
+Use this template to kick off any AI-assisted coding project using Claude Code + GitHub + Linear + Markdown.
+
+---
+
 ## Claude Code Implementation Workflow — Inspired by Helen's System (Nov 7 Office Hours)
 
 ### Overview
@@ -22,17 +30,37 @@ This document outlines a repeatable Claude Code-based implementation workflow, i
 ### 🛠️ Folder Structure
 
 ```
-/repo/
+/.github/          # Optional GitHub Actions
+/claude/           # Implementation plan + learnings from Claude
   implementation-plan.md
   learnings/
-  docs/
-    product-vision.md
-    setup-instructions.md
+/commands/         # Reusable Claude commands like /implement
+/docs/             # Vision, setup instructions, etc.
+  product-vision.md
+  setup-instructions.md
+/skills/           # Reusable Claude skills (e.g., refactor, frontend)
+/scripts/          # Deployment, migrations, etc.
+/src/              # App logic or script code
+.gitignore         # Ignore system & build files
+README.md          # Project overview and folder guide
+package.json       # (Empty or default for now)
 ```
 
 ---
 
-### 📌 Step-by-Step Workflow
+### 📌 How to Use
+
+1. Use Claude Code to generate `/docs/product-vision.md` – this is your PRD.
+2. Use Claude Code to generate `/claude/implementation-plan.md`.
+3. Track any Claude insights or decisions in `/claude/learnings/`.
+4. Store custom commands in `/commands/`, skills in `/skills/`.
+5. Use Linear for polish tasks if needed.
+
+> 🧠 **Pro Tip:** Claude has no memory — keep everything important in Markdown files in this repo.
+
+---
+
+### Step-by-Step Workflow
 
 #### 1. **Create your vision / PRD**
 
@@ -45,7 +73,7 @@ This document outlines a repeatable Claude Code-based implementation workflow, i
 #### 2. **Draft Implementation Plan**
 
 * Ask Claude to break down the project into logical stages.
-* Use voice like: "Imagine a junior dev will follow this. Be overly explicit."
+* Use voice like: “Imagine a junior dev will follow this. Be overly explicit.”
 * Save plan in `/claude/implementation-plan.md`
 * Review and revise manually.
 
@@ -56,7 +84,7 @@ This document outlines a repeatable Claude Code-based implementation workflow, i
   * Save the transcript snippet in `/learnings/`
   * Include your interpretation/decision.
 
-#### 4. Work via Custom Commands:
+#### 4. **Work via Custom Commands:**
 
 * Claude reads `implementation-plan.md`
 * Identifies next incomplete task
