@@ -1,0 +1,40 @@
+# /commit — Format, Lint, and Commit Code Safely
+
+This command automates best-practice Git commits by analyzing your working directory, staging changes, running lint checks, and committing.
+
+## 🧩 What it Does
+
+* Checks the current branch
+* Runs type checks, formatters, and linters
+* Generates a commit message
+* Stages the appropriate files
+* Builds production code (optional)
+* Fixes basic errors where possible
+* Commits changes atomically
+
+## ✅ Example Flow
+
+```md
+/commit
+```
+
+Claude responds:
+
+```
+✅ Running Pre-Commit Checklist:
+- Branch: feat/add-skills-folder
+- Staged files: /src/index.js, /skills/refactor.md
+- Running lint...pass
+- Running formatter...done
+- Commit message: "feat: add skills folder with refactor template"
+```
+
+## 💡 Best Practices
+
+* Run `/commit` after every complete task
+* Add `.lint`, `.prettier`, or `build` scripts in `/scripts/` as needed
+* Combine with `/implement` to automate safe shipping
+
+---
+
+> 🔁 Tip: Use `/clear` after `/commit` to reset context and continue fresh.
