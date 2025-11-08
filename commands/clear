@@ -1,0 +1,51 @@
+# /clear — Reset Claude’s Context Safely
+
+Use this command to clear Claude's memory and reset your working session. This is especially helpful after:
+
+* Long conversations
+* Reaching 100k+ tokens
+* Multiple compacting warnings
+
+## 🧩 What it Does
+
+* Clears current context
+* Does *not* delete any files or commit history
+* Signals Claude to reread grounding documents on next command (e.g. product vision, implementation plan)
+
+## 🧠 Why Clear?
+
+Claude will slow down or lose flow if too much is loaded in memory. Resetting:
+
+* Improves response time
+* Prevents hallucinations or context loss
+* Ensures next commands start fresh
+
+## ✅ Workflow Tip
+
+After clearing, immediately re-ground Claude:
+
+```md
+Here’s what we’re building:
+/docs/product-vision.md
+
+Here’s our current plan:
+/claude/implementation-plan.md
+```
+
+Then reissue your next command (e.g., `/implement`).
+
+## 📝 Example Prompt
+
+```md
+/clear
+```
+
+Claude responds:
+
+```
+✅ Context cleared. Ready for new input.
+```
+
+---
+
+> 🧼 Tip: Think of this like restarting a fresh terminal tab with clean history.
